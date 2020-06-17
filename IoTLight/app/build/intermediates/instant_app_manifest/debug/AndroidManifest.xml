@@ -23,15 +23,25 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+<<<<<<< HEAD
         <activity android:name="com.tdtruong.iotlight.View.DeviceApdater" >
+=======
+        <activity android:name="com.tdtruong.iotlight.warningNotification" >
+>>>>>>> origin/master
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name="com.tdtruong.iotlight.View.MainActivity" >
         </activity>
+=======
+        <activity android:name="com.tdtruong.iotlight.LoginApp" >
+        </activity>
+        <activity android:name="com.tdtruong.iotlight.MainActivity" />
+>>>>>>> origin/master
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
     </application>

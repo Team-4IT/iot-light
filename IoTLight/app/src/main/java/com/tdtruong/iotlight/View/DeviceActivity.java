@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.tdtruong.iotlight.R;
 
-public class DeviceApdater extends AppCompatActivity {
+public class DeviceActivity extends AppCompatActivity {
     private TextView txtDeviceName;
     private TextView txtTemperature;
     private TextView txtHumidity;
