@@ -15,7 +15,7 @@ public class DeviceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.device_item);
+        setContentView(R.layout.device_activity);
 
         if(getSupportActionBar() != null){
             getSupportActionBar().hide();

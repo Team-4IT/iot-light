@@ -1,71 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".View.DeviceActivity"
-    android:orientation="vertical"
-    android:weightSum="100">
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardBackgroundColor="@color/white"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="5dp"
+    card_view:cardUseCompatPadding="true">
 
-    <TextView
-        android:id="@+id/device_id"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/device_id"
-        android:textSize="@dimen/device_id"
-        android:layout_weight="10"
-        android:gravity="center" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="45"
-        android:background="@color/colorAccent"
-        android:layout_margin="@dimen/margin_linear"
-        android:orientation="horizontal">
+        android:padding="5dp">
 
         <TextView
-            android:id="@+id/txt_temperature"
-            android:layout_width="wrap_content"
+            android:id="@+id/device_id"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/temperature"
-            android:layout_gravity="center_vertical"
-            android:textSize="@dimen/item_text"
-            android:layout_margin="@dimen/margin_item"/>
-        <ImageView
-            android:layout_width="@dimen/img_item"
-            android:layout_height="@dimen/img_item"
-            android:src="@drawable/temperature"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/margin_left_img"
-             />
-    </LinearLayout>
+            android:textSize="@dimen/device_id"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="@string/device_id">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="45"
-        android:background="@android:color/holo_blue_bright"
-        android:layout_margin="@dimen/margin_linear"
-        android:orientation="horizontal">
+        </TextView>
 
         <TextView
-            android:id="@+id/txt_humidity"
+            android:id="@+id/device_position"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/humidity"
-            android:layout_gravity="center_vertical"
-            android:textSize="@dimen/item_text"
-            android:layout_margin="@dimen/margin_item"/>
-        <ImageView
-            android:layout_width="@dimen/img_item"
-            android:layout_height="@dimen/img_item"
-            android:src="@drawable/humidity"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/margin_left_img"
-            />
-    </LinearLayout>
+            android:layout_below="@id/device_id"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/position_text_size"
+            android:text="@string/device_position">
+        </TextView>
+    </RelativeLayout>
 
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,17 +1,10 @@
 {
     "logs": [
         {
-<<<<<<< HEAD
             "outputFile": "D:\\Programing\\Android\\iot-light\\IoTLight\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\admin\\.gradle\\caches\\transforms-2\\files-2.1\\697f71c0c12135256cbfe98df498a7e4\\appcompat-1.0.2\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
-=======
-            "outputFile": "C:\\Users\\tmthi\\AndroidStudioProjects\\iot-light\\IoTLight\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\tmthi\\.gradle\\caches\\transforms-2\\files-2.1\\697f71c0c12135256cbfe98df498a7e4\\appcompat-1.0.2\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
->>>>>>> origin/master
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

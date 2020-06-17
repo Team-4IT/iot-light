@@ -12,12 +12,15 @@ import com.tdtruong.iotlight.R;
 
 public class LoginApp extends AppCompatActivity {
 
-    EditText edtuser , edtpass;
+    private EditText edtuser , edtpass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_app);
+
+        if(getSupportActionBar() != null)
+            getSupportActionBar().hide();
 
         edtuser = (EditText) findViewById(R.id.inputuser);
         edtpass = (EditText) findViewById(R.id.inputpass);

@@ -1,12 +1,15 @@
 <resources>
-    <string name="app_name">IoT Light</string>
-<<<<<<< HEAD
+    <string name="app_name">Remote Light</string>
 
-    <!-- Device Item -->
+    <!-- Device Activity -->
     <string name="device_id">Device name</string>
     <string name="temperature">25°C</string>
     <string name="humidity">50 %</string>
-=======
+
+
+    <!-- Device Item -->
+    <string name="device_position">Room 101, Building A</string>
+
     <!-- Sample Data -->
     <string name="sample_state">Delhi</string>
     <string name="empty_description">No description available.</string>
@@ -90,5 +93,5 @@
     <string name="choose_an_option">Choose an option</string>
     <string name="remove_profile_picture">Do you want to remove profile picture?</string>
     <string name="delete_account">Are you sure you want to remove your travel mate account? This action can\'t be undone.</string>
->>>>>>> origin/master
+
 </resources>
