@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">IoT Light</string>
+
+    <!-- Device Item -->
+    <string name="device_id">Device name</string>
+    <string name="temperature">25°C</string>
+    <string name="humidity">50 %</string>
 </resources>
