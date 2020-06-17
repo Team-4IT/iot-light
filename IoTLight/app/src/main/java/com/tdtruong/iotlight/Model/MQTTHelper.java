@@ -15,8 +15,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 public class MQTTHelper {
     final String serverUri = "tcp://13.76.250.158:1883";
     final String clientId = "The Last";
-    final String subTempTopic = "Topic/TempHumi";
-    final String subLightTopic = "Topic/Light";
+    final String subscriptionTopic = "Topic/TempHumi";
     final String username = "BKvm2";
     final String password = "Hcmut_CSE_2020";
 
@@ -42,13 +41,12 @@ public class MQTTHelper {
                                                  iMqttDeliveryToken) {
             }
         });
-        connect(subTempTopic);
-        connect(subLightTopic);
+        connect();
     }
     public void setCallback(MqttCallbackExtended callback) {
         mqttAndroidClient.setCallback(callback);
     }
-    private void connect(final String subTopic){
+    private void connect(){
         MqttConnectOptions mqttConnectOptions = new MqttConnectOptions();
         mqttConnectOptions.setAutomaticReconnect(true);
         mqttConnectOptions.setCleanSession(false);
@@ -66,7 +64,7 @@ public class MQTTHelper {
                             disconnectedBufferOptions.setPersistBuffer(false);
                             disconnectedBufferOptions.setDeleteOldestMessages(false);
                             mqttAndroidClient.setBufferOpts(disconnectedBufferOptions);
-                            subscribeToTopic(subTopic);
+                            subscribeToTopic();
                         }
                         @Override
                         public void onFailure(IMqttToken asyncActionToken, Throwable
@@ -79,9 +77,9 @@ public class MQTTHelper {
             ex.printStackTrace();
         }
     }
-    private void subscribeToTopic(String subTopic) {
+    private void subscribeToTopic() {
         try {
-            mqttAndroidClient.subscribe(subTopic, 0, null, new
+            mqttAndroidClient.subscribe(subscriptionTopic, 0, null, new
                     IMqttActionListener() {
                         @Override
                         public void onSuccess(IMqttToken asyncActionToken) {

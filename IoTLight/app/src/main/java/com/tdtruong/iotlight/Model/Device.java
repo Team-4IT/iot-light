@@ -1,11 +1,11 @@
 package com.tdtruong.iotlight.Model;
 
-public class TempHumi {
+public class Device {
     private String id;
     private float temperature;
     private float humidity;
 
-    public TempHumi(String id, float temperature, float humidity) {
+    public Device(String id, float temperature, float humidity) {
         this.id = id;
         this.temperature = temperature;
         this.humidity = humidity;
