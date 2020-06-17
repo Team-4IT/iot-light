@@ -6,41 +6,60 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="15"
-8-->H:\HK192\TTDADN\IoTLight\app\src\main\AndroidManifest.xml
+8-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->H:\HK192\TTDADN\IoTLight\app\src\main\AndroidManifest.xml
+9-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml
 10
-11    <application
-11-->H:\HK192\TTDADN\IoTLight\app\src\main\AndroidManifest.xml:5:5-19:19
-12        android:allowBackup="true"
-12-->H:\HK192\TTDADN\IoTLight\app\src\main\AndroidManifest.xml:6:9-35
-13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.0.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\8f8ab13dc8f4e84e14a8bb3d9ac92bc4\core-1.0.1\AndroidManifest.xml:22:18-86
-14        android:debuggable="true"
-15        android:icon="@mipmap/ic_launcher"
-15-->H:\HK192\TTDADN\IoTLight\app\src\main\AndroidManifest.xml:7:9-43
-16        android:label="@string/app_name"
-16-->H:\HK192\TTDADN\IoTLight\app\src\main\AndroidManifest.xml:8:9-41
-17        android:roundIcon="@mipmap/ic_launcher_round"
-17-->H:\HK192\TTDADN\IoTLight\app\src\main\AndroidManifest.xml:9:9-54
-18        android:supportsRtl="true"
-18-->H:\HK192\TTDADN\IoTLight\app\src\main\AndroidManifest.xml:10:9-35
-19        android:theme="@style/AppTheme" >
-19-->H:\HK192\TTDADN\IoTLight\app\src\main\AndroidManifest.xml:11:9-40
-20        <activity android:name="com.tdtruong.iotlight.MainActivity" >
-20-->H:\HK192\TTDADN\IoTLight\app\src\main\AndroidManifest.xml:12:9-18:20
-20-->H:\HK192\TTDADN\IoTLight\app\src\main\AndroidManifest.xml:12:19-47
-21            <intent-filter>
-21-->H:\HK192\TTDADN\IoTLight\app\src\main\AndroidManifest.xml:13:13-17:29
-22                <action android:name="android.intent.action.MAIN" />
-22-->H:\HK192\TTDADN\IoTLight\app\src\main\AndroidManifest.xml:14:17-69
-22-->H:\HK192\TTDADN\IoTLight\app\src\main\AndroidManifest.xml:14:25-66
-23
-24                <category android:name="android.intent.category.LAUNCHER" />
-24-->H:\HK192\TTDADN\IoTLight\app\src\main\AndroidManifest.xml:16:17-77
-24-->H:\HK192\TTDADN\IoTLight\app\src\main\AndroidManifest.xml:16:27-74
-25            </intent-filter>
-26        </activity>
-27    </application>
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:5:5-67
+11-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.WAKE_LOCK" />
+12-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:6:5-68
+12-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:6:22-65
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:7:5-79
+13-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:7:22-76
+14
+15    <application
+15-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:9:5-28:19
+16        android:allowBackup="true"
+16-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:10:9-35
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.0.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\8f8ab13dc8f4e84e14a8bb3d9ac92bc4\core-1.0.1\AndroidManifest.xml:22:18-86
+18        android:debuggable="true"
+19        android:icon="@mipmap/ic_launcher"
+19-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:11:9-43
+20        android:label="@string/app_name"
+20-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:12:9-41
+21        android:roundIcon="@mipmap/ic_launcher_round"
+21-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:13:9-54
+22        android:supportsRtl="true"
+22-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:14:9-35
+23        android:testOnly="true"
+24        android:theme="@style/AppTheme" >
+24-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:15:9-40
+25        <activity android:name="com.tdtruong.iotlight.View.DeviceApdater" >
+25-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:16:9-22:20
+25-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:16:19-53
+26            <intent-filter>
+26-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:17:13-21:29
+27                <action android:name="android.intent.action.MAIN" />
+27-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:18:17-69
+27-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:18:25-66
 28
-29</manifest>
+29                <category android:name="android.intent.category.LAUNCHER" />
+29-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:20:17-77
+29-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:20:27-74
+30            </intent-filter>
+31        </activity>
+32        <activity android:name="com.tdtruong.iotlight.View.MainActivity" >
+32-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:23:9-25:20
+32-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:23:19-52
+33        </activity>
+34
+35        <service android:name="org.eclipse.paho.android.service.MqttService" />
+35-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:27:9-80
+35-->D:\Programing\Android\iot-light\IoTLight\app\src\main\AndroidManifest.xml:27:18-77
+36    </application>
+37
+38</manifest>
