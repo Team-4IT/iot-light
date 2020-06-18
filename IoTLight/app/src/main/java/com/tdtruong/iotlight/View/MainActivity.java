@@ -43,16 +43,16 @@ public class MainActivity extends AppCompatActivity {
                 JSONArray jsonArray = new JSONArray(mqttMessage.toString());
                 JSONObject jsonObject = jsonArray.getJSONObject(0);
                 String device_id = jsonObject.getString("device_id");
-                String location = jsonObject.getString("values");
+                String temp_humi = jsonObject.getString("values");
 
-                JSONArray arr_value = new JSONArray(location);
-                String str_longitude = arr_value.getString(0);
-                String str_latitude = arr_value.getString(1);
-                float longitude = Float.parseFloat(str_longitude);
-                float latitude = Float.parseFloat(str_latitude);
+                JSONArray arr_value = new JSONArray(temp_humi);
+                String str_temp = arr_value.getString(0);
+                String str_humi = arr_value.getString(1);
+                float temperature = Float.parseFloat(str_temp);
+                float humidity = Float.parseFloat(str_humi);
 
 
-                Log.d(TAG, "messageArrived: DeviceInfo" + " " + device_id + " " + longitude + " " + latitude);
+                Log.d(TAG, "messageArrived: DeviceInfo" + " " + device_id + " " + temperature + " " + humidity);
 
                 // Handle data
 
