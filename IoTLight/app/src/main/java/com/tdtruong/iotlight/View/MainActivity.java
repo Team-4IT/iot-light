@@ -14,10 +14,12 @@ import com.tdtruong.iotlight.adapter.DeviceAdapter;
 
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallbackExtended;
+import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
         addControls();
         addEvents();
+
+        startMQTT();
     }
 
     private void addControls() {
@@ -99,4 +103,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void sendDataToMQTT(String ID, String value){
+
+        MqttMessage msg = new MqttMessage();
+        msg.setId(1234);
+        msg.setQos(0);
+        msg.setRetained(true);
+
+        String data = ID + ":" + value;
+
+        byte[] b = data.getBytes(Charset.forName("UTF-8"));
+        msg.setPayload(b);
+
+        try {
+            mqttHelper.mqttAndroidClient.publish("sensor/RP3", msg);
+
+        }catch (MqttException e){
+        }
+    }
+
 }

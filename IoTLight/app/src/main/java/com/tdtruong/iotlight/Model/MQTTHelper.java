@@ -13,11 +13,11 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 public class MQTTHelper {
-    final String serverUri = "tcp://13.76.250.158:1883";
+    final String serverUri = "tcp://hairdresser.cloudmqtt.com:17681";
     final String clientId = "The Last";
     final String subscriptionTopic = "Topic/TempHumi";
-    final String username = "BKvm2";
-    final String password = "Hcmut_CSE_2020";
+    final String username = "zwpkdaox";
+    final String password = "0BxcZvUdbXkf";
 
     public MqttAndroidClient mqttAndroidClient;
     public MQTTHelper(Context context){
