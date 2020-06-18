@@ -44,4 +44,12 @@ public class Device {
     public void setHumidity(float humidity) {
         this.humidity = humidity;
     }
+
+    public boolean isLimitedTemperature(float temperature){
+        return (temperature > 50) || (temperature < 10);
+    }
+
+    public boolean isLimitedHumidity(float humidity){
+        return (humidity > 85) || (humidity < 20);
+    }
 }

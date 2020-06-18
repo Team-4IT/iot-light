@@ -11,7 +11,7 @@ import com.tdtruong.iotlight.adapter.AdapterNotification;
 
 import java.util.ArrayList;
 
-public class WarnningNotification extends AppCompatActivity {
+public class WarningNotification extends AppCompatActivity {
 
     ListView lstwarn;
     //    ArrayAdapter<String> arrayAdapter;

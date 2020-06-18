@@ -29,7 +29,7 @@ public class LoginApp extends AppCompatActivity {
 
     public void clickLogin(View view) {
         if(edtuser.getText().toString().equals("admin") && edtpass.getText().toString().equals("admin")){
-            Intent i = new Intent(this, MainActivity.class);
+            Intent i = new Intent(this, DeviceActivity.class);
             startActivity(i);
         }
         else{
