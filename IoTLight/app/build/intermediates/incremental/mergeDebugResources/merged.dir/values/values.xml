@@ -585,6 +585,7 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="position_text_size">15sp</dimen>
     <dimen name="tooltip_corner_radius">2dp</dimen>
     <dimen name="tooltip_horizontal_padding">16dp</dimen>
     <dimen name="tooltip_margin">8dp</dimen>
@@ -685,7 +686,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="app_name">IoT Light</string>
+    <string name="app_name">Remote Light</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
     <string name="change_password_heading">Change Password</string>
@@ -697,6 +698,7 @@
     <string name="default_name">--</string>
     <string name="delete_account">Are you sure you want to remove your travel mate account? This action can\'t be undone.</string>
     <string name="device_id">Device name</string>
+    <string name="device_position">Room 101, Building A</string>
     <string name="email">Email</string>
     <string name="email_id">Email id</string>
     <string name="empty_description">No description available.</string>

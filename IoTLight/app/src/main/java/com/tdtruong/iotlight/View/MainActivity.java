@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.tdtruong.iotlight.Model.AdjustOutputDevice;
 import com.tdtruong.iotlight.Model.Device;
 import com.tdtruong.iotlight.Model.MQTTHelper;
+import com.tdtruong.iotlight.Model.SplitData;
 import com.tdtruong.iotlight.R;
 import com.tdtruong.iotlight.adapter.DeviceAdapter;
 
@@ -21,9 +23,12 @@ import org.json.JSONObject;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
     MQTTHelper mqttHelper;
+    String dataInput="None";
     private static RecyclerView rvListDevice;
     private static ArrayList<Device> mDevices;
     private static DeviceAdapter mDeviceAdapter;
@@ -65,61 +70,98 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startMQTT(){
-        mqttHelper = new MQTTHelper(getApplicationContext());
-        mqttHelper.setCallback(new MqttCallbackExtended() {
+        final Timer aTimer = new Timer();
+        TimerTask aTask = new TimerTask() {
             @Override
-            public void connectComplete(boolean b, String s) {
-                Log.d("mqtt data","complete" );
+            public void run() {
+                mqttHelper = new MQTTHelper(getApplicationContext());
+                mqttHelper.setCallback(new MqttCallbackExtended() {
+                    @Override
+                    public void connectComplete(boolean b, String s) {
+                        Log.d("mqtt data", "complete");
+                    }
+
+                    @Override
+                    public void connectionLost(Throwable throwable) {
+                        Log.d("mqtt data", "lost");
+                    }
+
+                    @Override
+                    public void messageArrived(String topic, MqttMessage mqttMessage)
+                            throws Exception {
+    /*
+                    JSONArray jsonArray = new JSONArray(mqttMessage.toString());
+                    JSONObject jsonObject = jsonArray.getJSONObject(0);
+                    String device_id = jsonObject.getString("device_id");
+                    String temp_humi = jsonObject.getString("values");
+
+                    JSONArray arr_value = new JSONArray(temp_humi);
+                    String str_temp = arr_value.getString(0);
+                    String str_humi = arr_value.getString(1);
+                    float temperature = Float.parseFloat(str_temp);
+                    float humidity = Float.parseFloat(str_humi);
+
+
+                    Log.d(TAG, "messageArrived: DeviceInfo" + " " + device_id + " " + temperature + " " + humidity);
+    */
+                        Log.w("Debug mqtt", mqttMessage.toString());
+                        dataInput = mqttMessage.toString();
+                        SplitData data = new SplitData();
+                        data.setData(dataInput);
+                        DeviceActivity deviceActivity = new DeviceActivity();
+                        deviceActivity.getData(data);
+
+                        AdjustOutputDevice dataOutput = new AdjustOutputDevice();
+                        dataOutput.modify(data.getTemp(), data.getHumi());
+
+                        sendDataToMQTT(dataOutput);
+
+                        //dataReceived.setText("Receive: " + dataInput);
+
+                        // Handle data
+
+                        // Load Device
+
+                    }
+
+                    @Override
+                    public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
+                    }
+                });
             }
-            @Override
-            public void connectionLost(Throwable throwable) {
-                Log.d("mqtt data","lost" );
-            }
-            @Override
-            public void messageArrived(String topic, MqttMessage mqttMessage)
-                    throws Exception {
-
-                JSONArray jsonArray = new JSONArray(mqttMessage.toString());
-                JSONObject jsonObject = jsonArray.getJSONObject(0);
-                String device_id = jsonObject.getString("device_id");
-                String temp_humi = jsonObject.getString("values");
-
-                JSONArray arr_value = new JSONArray(temp_humi);
-                String str_temp = arr_value.getString(0);
-                String str_humi = arr_value.getString(1);
-                float temperature = Float.parseFloat(str_temp);
-                float humidity = Float.parseFloat(str_humi);
-
-
-                Log.d(TAG, "messageArrived: DeviceInfo" + " " + device_id + " " + temperature + " " + humidity);
-
-                // Handle data
-
-                // Load Device
-
-            }
-            @Override
-            public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
-            }
-        });
+        };
+        aTimer.schedule(aTask, 5000, 5000);
     }
 
-    private void sendDataToMQTT(String ID, String value){
+    private void sendDataToMQTT(AdjustOutputDevice dataOutput){
 
-        MqttMessage msg = new MqttMessage();
-        msg.setId(1234);
-        msg.setQos(0);
-        msg.setRetained(true);
+        MqttMessage msgToSpeaker = new MqttMessage();
+        msgToSpeaker.setId(1234);
+        msgToSpeaker.setQos(0);
+        msgToSpeaker.setRetained(true);
 
-        String data = ID + ":" + value;
+        boolean alert;
+        int onOff;
+        int volume;
 
-        byte[] b = data.getBytes(Charset.forName("UTF-8"));
-        msg.setPayload(b);
+        alert = dataOutput.getAlert();
+
+        if (dataOutput.getStatus())
+            onOff = 1;
+        else
+            onOff = 0;
+
+        volume = dataOutput.getVolume();
+
+        msgToSpeaker.setPayload(new byte[]{Byte.parseByte(String.valueOf(onOff)), Byte.parseByte(String.valueOf(volume))});
+
+        Log.w("checkSendB", msgToSpeaker.toString());
 
         try {
-            mqttHelper.mqttAndroidClient.publish("sensor/RP3", msg);
+            mqttHelper.mqttAndroidClient.publish("Topic/Speaker", msgToSpeaker);
 
         }catch (MqttException e){
+
         }
     }
 

@@ -24,7 +24,7 @@
         android:theme="@style/AppTheme" >
         <activity android:name="com.tdtruong.iotlight.View.DeviceActivity" >
         </activity>
-        <activity android:name="com.tdtruong.iotlight.View.WarnningNotification" >
+        <activity android:name="com.tdtruong.iotlight.View.WarningNotification" >
         </activity>
         <activity android:name="com.tdtruong.iotlight.View.LoginApp" >
             <intent-filter>
