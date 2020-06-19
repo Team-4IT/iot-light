@@ -13,11 +13,11 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 public class MQTTHelper {
-    final String serverUri = "tcp://hairdresser.cloudmqtt.com:17681";
+    final String serverUri = "tcp://40.87.100.106:1883";
     final String clientId = "The Last";
     final String subscriptionTopic = "Topic/TempHumi";
-    final String username = "zwpkdaox";
-    final String password = "0BxcZvUdbXkf";
+    final String username = "The Last";
+    final String password = "The Last";
 
     public MqttAndroidClient mqttAndroidClient;
     public MQTTHelper(Context context){
@@ -34,7 +34,7 @@ public class MQTTHelper {
             @Override
             public void messageArrived(String topic, MqttMessage mqttMessage)
                     throws Exception {
-                Log.w("Mqtt", mqttMessage.toString());
+                Log.w("Mqtt z", mqttMessage.toString());
             }
             @Override
             public void deliveryComplete(IMqttDeliveryToken
@@ -80,16 +80,16 @@ public class MQTTHelper {
     private void subscribeToTopic() {
         try {
             mqttAndroidClient.subscribe(subscriptionTopic, 0, null, new
-                    IMqttActionListener() {
-                        @Override
-                        public void onSuccess(IMqttToken asyncActionToken) {
-                            Log.w("Mqtt","Subscribed!");
-                        }
-                        @Override
-                        public void onFailure(IMqttToken asyncActionToken, Throwable
-                                exception) {Log.w("Mqtt", "Subscribed fail!");
-                        }
-                    });
+                IMqttActionListener() {
+                    @Override
+                    public void onSuccess(IMqttToken asyncActionToken) {
+                        Log.w("Mqtt","Subscribed!");
+                    }
+                    @Override
+                    public void onFailure(IMqttToken asyncActionToken, Throwable
+                            exception) {Log.w("Mqtt", "Subscribed fail!");
+                    }
+                });
         } catch (MqttException ex) {
             System.err.println("Exceptionst subscribing");
             ex.printStackTrace();

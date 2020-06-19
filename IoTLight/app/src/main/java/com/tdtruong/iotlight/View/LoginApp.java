@@ -29,11 +29,11 @@ public class LoginApp extends AppCompatActivity {
 
     public void clickLogin(View view) {
         if(edtuser.getText().toString().equals("admin") && edtpass.getText().toString().equals("admin")){
-            Intent i = new Intent(this, DeviceActivity.class);
+            Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
         }
         else{
-            Toast.makeText(this, "Login Fault , Plaese Login Again !!" , Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Login Fault , Please Login Again !!" , Toast.LENGTH_LONG).show();
         }
     }
 }

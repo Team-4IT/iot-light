@@ -3,6 +3,7 @@ package com.tdtruong.iotlight.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.tdtruong.iotlight.Model.SplitData;
@@ -19,7 +20,7 @@ public class DeviceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.device_activity);
-
+        Log.w("inside","DeviceActivity");
         if(getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }

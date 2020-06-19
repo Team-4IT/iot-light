@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/IoTLight-IoT_Light.iml" filepath="$PROJECT_DIR$/.idea/modules/IoTLight-IoT_Light.iml" group="IoT_Light" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IoT_Light.iml" filepath="$PROJECT_DIR$/.idea/modules/IoT_Light.iml" group="IoT_Light" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="IoT Light/app" />
     </modules>
   </component>
