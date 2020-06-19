@@ -102,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
                     float temperature = Float.parseFloat(str_temp);
                     float humidity = Float.parseFloat(str_humi);
 
-
                     Log.d(TAG, "messageArrived: DeviceInfo" + " " + device_id + " " + temperature + " " + humidity);
     */
                         Log.w("Debug mqtt", mqttMessage.toString());
